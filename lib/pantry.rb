@@ -14,6 +14,10 @@ class Pantry
   end
   
   def stock_check(ingredient)
-    
+    if @stock.include?(ingredient) == false
+      0
+    else
+      @stock[ingredient]
+    end
   end
 end
