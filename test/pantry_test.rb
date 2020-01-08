@@ -18,6 +18,6 @@ class PantryTest < Minitest::Test
   end
   
   def test_it_has_attributes
-    
+    skip
   end
 end
