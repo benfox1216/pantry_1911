@@ -11,4 +11,8 @@ class Recipe
     @ingredients_required[ingredient] = amount
     @ingredients << ingredient
   end
+  
+  def amount_required(ingredient)
+    @ingredients_required[ingredient]
+  end
 end

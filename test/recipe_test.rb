@@ -32,7 +32,6 @@ class RecipeTest < Minitest::Test
   end
   
   def test_it_can_determine_amount_of_ingredients_required
-    skip
     @recipe.add_ingredient(@ingredient1, 2)
     
     assert_equal 2, @recipe.amount_required(@ingredient1)
