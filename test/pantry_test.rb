@@ -39,4 +39,17 @@ class PantryTest < Minitest::Test
     
     assert_equal 15, @pantry.stock_check(@ingredient1)
   end
+  
+  def test_it_can_verify_there_are_enough_ingredients
+    @recipe.add_ingredient(@ingredient1, 2)
+    @recipe.add_ingredient(@ingredient2, 8)
+    @pantry.restock(@ingredient1, 5)
+    @pantry.restock(@ingredient1, 10)
+    
+    assert_equal false, @pantry.enough_ingredients_for?(@recipe)
+    
+    @pantry.restock(@ingredient2, 1)
+    
+    assert_equal true, @pantry.enough_ingredients_for?(@recipe)
+  end
 end
