@@ -18,6 +18,8 @@ class PantryTest < Minitest::Test
   end
   
   def test_it_has_attributes
-    skip
+    expected = {}
+    
+    assert_equal expected, @pantry.stock
   end
 end
